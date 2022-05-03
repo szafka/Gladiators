@@ -1,0 +1,15 @@
+C:\Dokumenty\gladiator-csharp-szafka\bin\Debug\net6.0\Gladiator.exe
+C:\Dokumenty\gladiator-csharp-szafka\bin\Debug\net6.0\Gladiator.deps.json
+C:\Dokumenty\gladiator-csharp-szafka\bin\Debug\net6.0\Gladiator.runtimeconfig.json
+C:\Dokumenty\gladiator-csharp-szafka\bin\Debug\net6.0\Gladiator.dll
+C:\Dokumenty\gladiator-csharp-szafka\bin\Debug\net6.0\Gladiator.pdb
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.csproj.AssemblyReference.cache
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.AssemblyInfoInputs.cache
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.AssemblyInfo.cs
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.csproj.CoreCompileInputs.cache
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.dll
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\refint\Gladiator.dll
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.pdb
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\Gladiator.genruntimeconfig.cache
+C:\Dokumenty\gladiator-csharp-szafka\obj\Debug\net6.0\ref\Gladiator.dll
