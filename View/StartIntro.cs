@@ -43,28 +43,53 @@ namespace Gladiator.View
             Console.WriteLine("                    **   ***   ***   ****   ***   ***   **");
             Thread.Sleep(1500);
         }
-        public static void Menu()
+        public static void MenuGeneral()
         {
             Console.WriteLine("\t");
             Console.WriteLine("\t");
-            Console.WriteLine("\t");
-            Console.WriteLine("\t");
-            Console.WriteLine("  " + "S H O W    A L L   G L A D I A T O R S              :   S E L E C T   1    A N D   P R E S S   E N T E R");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W    A L L   G L A D I A T O R S              :   S E L E C T   1    A N D   P R E S S   E N T E R   |");
             Thread.Sleep(500);
-            Console.WriteLine("\t");
-            Console.WriteLine("  " + "S H O W    A L L   S P E C I A L I T I S            :   S E L E C T   2    A N D   P R E S S   E N T E R");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W    A L L   S P E C I A L I T I S            :   S E L E C T   2    A N D   P R E S S   E N T E R   |");
             Thread.Sleep(500);
-            Console.WriteLine("\t");
-            Console.WriteLine("  " + "A D D    R A N D O M   1 6   G L A D I A T O R S    :   S E L E C T   3    A N D   P R E S S   E N T E R");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  A D D    R A N D O M   1 6   G L A D I A T O R S    :   S E L E C T   3    A N D   P R E S S   E N T E R   |");
             Thread.Sleep(500);
-            Console.WriteLine("\t");
-            Console.WriteLine("  " + "S H O W   A D D E D   G L A D I A T O R S           :   S E L E C T   4    A N D   P R E S S   E N T E R");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W   A D D E D   G L A D I A T O R S           :   S E L E C T   4    A N D   P R E S S   E N T E R   |");
             Thread.Sleep(500);
-            Console.WriteLine("\t");
-            Console.WriteLine("  " + "S T A R T   N E W   T U R N A M E N T               :   S E L E C T   6    A N D   P R E S S   E N T E R");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S T A R T   N E W   T U R N A M E N T               :   S E L E C T   6    A N D   P R E S S   E N T E R   |");
             Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  E X I T                                             :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("\t");
-            Console.WriteLine("  " + "E X I T                                             :   S E L E C T   7    A N D   P R E S S   E N T E R");
+            Console.WriteLine("     S E L E C T   N U M B E R  :");
+        }
+        public static void FirstMenuAfterWrongSelect()
+        {
+            Console.WriteLine("     S E L E C T   N U M B E R  :");
+            Console.WriteLine("\t");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W    A L L   G L A D I A T O R S              :   S E L E C T   1    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W    A L L   S P E C I A L I T I S            :   S E L E C T   2    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  A D D    R A N D O M   1 6   G L A D I A T O R S    :   S E L E C T   3    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S H O W   A D D E D   G L A D I A T O R S           :   S E L E C T   4    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  S T A R T   N E W   T U R N A M E N T               :   S E L E C T   6    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  E X I T                                             :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("\t");
         }
     }
 }

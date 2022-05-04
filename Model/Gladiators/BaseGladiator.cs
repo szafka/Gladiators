@@ -11,7 +11,7 @@ namespace Gladiator.Model.Gladiators
         {
             Names.Add(baseGladiator);
         }
-        string[] readNamesArray()
+        public string[] readNamesArray()
         {
             return File.ReadAllLines("Names.txt");
         }

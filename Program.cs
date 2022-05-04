@@ -8,9 +8,6 @@ namespace Gladiator
         public static void Main()
         {
             // Start the program here
-            StartIntro.Intro();
-            Thread.Sleep(3000);
-            StartIntro.Menu();
             ConsoleView.Run();
         }
     }
