@@ -4,44 +4,37 @@ using System.Threading;
 
 namespace Gladiator.View
 {
-    public class ConsoleView
+    public class ConsoleView : IView
     {
-        static BaseGladiator baseGladiator = new BaseGladiator();
+        public void writeLine(string text)
+        {
+            Console.WriteLine(text);
+        }
         public static void Run()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Dokumenty\gladiator-csharp-szafka\Names.txt");
-            //baseGladiator.Names.AddRange(lines);
-            //foreach (var line in lines)
-            //{
-            //    baseGladiator.Names.Add(line);
-            //}
             StartIntro.Intro();
             Thread.Sleep(1000);
             StartIntro.MenuGeneral();
             int intSelected = 0;
-            CheckSelectedNumberMenuGeneral();
+            int numOfChoises = 1;
+            CheckSelectedNumberMenuGeneral(numOfChoises);
             switch (intSelected)
             {
                 case 0:
                     Environment.Exit(0);
                     break;
                 case 1:
-
+                    Console.WriteLine("S E L E C T   N U M B E R   O F   G L A D I A T O R S :" +
+                        "1 : 2   G L A D I A T O R S" +
+                        "2 : 4   G L A D I A T O R S" +
+                        "3 : 8   G L A D I A T O R S" +
+                        "4 : 16  G L A D I A T O R S");
+                        numOfChoises = 4;
+                    CheckSelectedNumberMenuGeneral(numOfChoises);
                     break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-
             }
         }
-        public static int CheckSelectedNumberMenuGeneral()
+        public static int CheckSelectedNumberMenuGeneral(int numOfChoises)
         {
             Boolean validSelection = false;
             int intSelected = 0;
@@ -56,7 +49,7 @@ namespace Gladiator.View
                     else
                     {
                     intSelected = Int32.Parse(selected);
-                    if (intSelected < 0 || intSelected > 6)
+                    if (intSelected < 0 || intSelected > numOfChoises)
                     {
                         Console.Clear();
                         StartIntro.FirstMenuAfterWrongSelect();
@@ -65,7 +58,6 @@ namespace Gladiator.View
                         validSelection = true;
                 }
             }
-
             return intSelected;
         }
     }

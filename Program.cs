@@ -1,4 +1,8 @@
 ﻿using Gladiator.View;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Threading;
 
 namespace Gladiator
@@ -8,7 +12,8 @@ namespace Gladiator
         public static void Main()
         {
             // Start the program here
-            ConsoleView.Run();
+            //ConsoleView.Run();
+
         }
     }
 }

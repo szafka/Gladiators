@@ -1,6 +1,6 @@
 ﻿namespace Gladiator.Model
 {
-    public enum statisticMultiplier
+    public enum StatisticMultiplier
     {
         Low,
         Medium,
