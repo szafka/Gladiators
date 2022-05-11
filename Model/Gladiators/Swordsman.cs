@@ -2,7 +2,7 @@
 {
     public class Swordsman : BaseGladiator
     {
-        public Swordsman(string name, int level, int baseHP, int baseSP, int baseDEX) : base(name, level, baseHP, baseSP, baseDEX)
+        public Swordsman(string specializationName, string name, int level, int baseHP, int baseSP, int baseDEX) : base(specializationName, name, level, baseHP, baseSP, baseDEX)
         {
         }
 

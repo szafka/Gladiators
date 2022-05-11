@@ -2,7 +2,8 @@
 {
     public class Archer : BaseGladiator
     {
-        public Archer(string name, int level, int baseHP, int baseSP, int baseDEX) : base(name, level, baseHP, baseSP, baseDEX)
+        public Archer(string specializationName, string name, int level, int baseHP, int baseSP, int baseDEX) : base(specializationName, name, level, baseHP, baseSP, baseDEX)
+
         {
         }
 

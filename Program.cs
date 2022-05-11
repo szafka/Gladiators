@@ -7,13 +7,11 @@ using System.Threading;
 
 namespace Gladiator
 {
-    public static class Program
+    public class Program
     {
         public static void Main()
         {
-            // Start the program here
-            //ConsoleView.Run();
-
+            MenuConsole.StartMenu()
         }
     }
 }

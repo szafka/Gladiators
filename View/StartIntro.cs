@@ -48,11 +48,12 @@ namespace Gladiator.View
         {
             Console.WriteLine("\t");
             Console.WriteLine("\t");
-            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
             Thread.Sleep(500);
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("    |                                                                                                             |");
             Console.WriteLine("    |  S T A R T   N E W   T U R N A M E N T               :   S E L E C T   1    A N D   P R E S S   E N T E R   |");
-            Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------"); Thread.Sleep(500);
             Console.WriteLine("    |                                                                                                             |");
             Console.WriteLine("    |  E X I T                                             :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
             Console.WriteLine("    |                                                                                                             |");
@@ -62,16 +63,50 @@ namespace Gladiator.View
         }
         public static void FirstMenuAfterWrongSelect()
         {
-            Console.WriteLine("     S E L E C T   N U M B E R  :");
+            Console.Clear();
+            Console.WriteLine("\t");
             Console.WriteLine("\t");
             Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("    |                                                                                                             |");
             Console.WriteLine("    |  S T A R T   N E W   T U R N A M E N T               :   S E L E C T   1    A N D   P R E S S   E N T E R   |");
             Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("    |                                                                                                             |");
             Console.WriteLine("    |  E X I T                                             :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
             Console.WriteLine("    |                                                                                                             |");
             Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("\t");
+            Console.WriteLine("     S E L E C T   N U M B E R  :");
+        }
+        public static void SelectTypeMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("\t");
+            Console.WriteLine("\t");
+            Thread.Sleep(500);
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  2  G L A D I A T O R S   T O U R N A M E N T        :   S E L E C T   1    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------"); Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  4  G L A D I A T O R S   T O U R N A M E N T        :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------"); Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  8  G L A D I A T O R S   T O U R N A M E N T        :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------"); Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  16  G L A D I A T O R S   T O U R N A M E N T       :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------"); Thread.Sleep(500);
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("    |  E X I T                                             :   S E L E C T   0    A N D   P R E S S   E N T E R   |");
+            Console.WriteLine("    |                                                                                                             |");
+            Console.WriteLine("     -------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("\t");
+            Console.WriteLine("     S E L E C T   N U M B E R  :");
         }
     }
 }

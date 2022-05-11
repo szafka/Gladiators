@@ -2,7 +2,7 @@
 {
     public class Brutal : BaseGladiator
     {
-        public Brutal(string name, int level, int baseHP, int baseSP, int baseDEX) : base(name, level, baseHP, baseSP, baseDEX)
+        public Brutal(string specializationName, string name, int level, int baseHP, int baseSP, int baseDEX) : base(specializationName, name, level, baseHP, baseSP, baseDEX)
         {
         }
 

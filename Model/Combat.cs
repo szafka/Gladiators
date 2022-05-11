@@ -1,10 +1,12 @@
 ﻿using Gladiator.Model.Gladiators;
+using Gladiator.View;
 using System;
 
 namespace Gladiator.Model
 {
     public class Combat
     {
+        private IView ViewMod;
         public BaseGladiator Simulate(BaseGladiator red, BaseGladiator blue)
         {
             if (red == null && blue != null)
@@ -12,30 +14,56 @@ namespace Gladiator.Model
                 return blue;
             }
             if (red != null && blue == null)
-            { 
+            {
                 return red;
             }
             if (red == null && blue == null)
             {
                 return null;
             }
+            int damage;
+            bool isStillAlive = true;
+            BaseGladiator attacker, defender;
+            FirstAttacerMethod(red, blue, out attacker, out defender);
 
-            var randomAttacker = GetRandomGenerator.GetRandom(1,3);
-            BaseGladiator attacker;
-            BaseGladiator defender;
+            while (isStillAlive)
+            {
+                if (HitMoment(attacker, defender) == true)
+                {
+                    damage = HitDamage(attacker);
+                    defender.DecreaseHpBy(damage);
+                    ViewMod.DisplayMsg(attacker.SpeclizationName + " " + attacker.Name + "deals " + damage + "damage");
+                }
+                if (defender.IsDead())
+                {
+
+                    ViewMod.DisplayMsg($"{defender.SpeclizationName} {defender.Name} is dead. {attacker.SpeclizationName}{attacker.Name} wins!");
+                    return attacker;
+                }
+                else
+                {
+                    (attacker, defender) = (defender, attacker);
+
+                } 
+            }
+            return null;
+        }
+
+        private static void FirstAttacerMethod(BaseGladiator red, BaseGladiator blue, out BaseGladiator attacker, out BaseGladiator defender)
+        {
+            var randomAttacker = GetRandomGenerator.GetRandom(1, 3);
             if (randomAttacker == 1)
             {
                 attacker = red;
                 defender = blue;
             }
-            else 
-            { 
+            else
+            {
                 attacker = blue;
                 defender = red;
             }
-            HitMoment(attacker, defender);
-            return null;
         }
+
         private bool HitMoment(BaseGladiator attacker, BaseGladiator deffender)
         {
             int leftBound = 1;
@@ -62,7 +90,7 @@ namespace Gladiator.Model
             }
             else return false;
         }
-        private double HitDamage(BaseGladiator attacker, BaseGladiator defender)
+        private int HitDamage(BaseGladiator attacker)
         {
             var damageMultiplier = (double)GetRandomGenerator.GetRandom(1, 6) / 10;
             return (int)(attacker.BaseSP * damageMultiplier);

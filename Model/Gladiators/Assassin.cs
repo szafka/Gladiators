@@ -2,7 +2,7 @@
 {
     public class Assassin : BaseGladiator
     {
-        public Assassin(string name, int level, int baseHP, int baseSP, int baseDEX) : base(name, level, baseHP, baseSP, baseDEX)
+        public Assassin(string specializationName, string name, int level, int baseHP, int baseSP, int baseDEX) : base(specializationName, name, level, baseHP, baseSP, baseDEX)
         {
         }
 

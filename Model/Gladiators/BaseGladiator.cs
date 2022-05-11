@@ -7,7 +7,7 @@ namespace Gladiator.Model.Gladiators
 {
     public abstract class BaseGladiator
     {
-        public string FullName { get; }
+        public string SpeclizationName { get; }
         public string Name { get; }
         public int Level { get; private set; }
         public int BaseHP { get; }
@@ -29,8 +29,9 @@ namespace Gladiator.Model.Gladiators
         {
             get { return (int)(BaseDEX * DEXmultiplier * Level); }
         }
-        protected BaseGladiator(string name, int level, int baseHP, int baseSP, int baseDEX)
+        protected BaseGladiator(string specializationName, string name, int level, int baseHP, int baseSP, int baseDEX)
         {
+            this.SpeclizationName = specializationName;
             this.Level = level;
             this.BaseDEX = baseDEX;
             this.BaseHP = baseHP;

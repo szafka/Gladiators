@@ -1,4 +1,5 @@
-﻿using Gladiator.Model.Gladiators;
+﻿using Gladiator.Controller;
+using Gladiator.Model.Gladiators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,61 +8,41 @@ namespace Gladiator.Model
 {
     public class GladiatorFactory
     {
-        public List<BaseGladiator> TournamentGladiators { get; }
+
         public GladiatorFactory()
         {
-            TournamentGladiators = new List<BaseGladiator>();
         }
 
         public BaseGladiator GenerateRandomGladiator()
         {
             string[] readNames = File.ReadAllLines(@"C:\Dokumenty\gladiator-csharp-szafka\Names.txt");
-            int chosenNumber =  Readline();
-            bool validCondition = true;
-            int numberOfGladiatorsToTournament;
-            while (!validCondition)
-            {
-                if (chosenNumber > 4)
+
+                string name = readNames[GetRandomGenerator.GetRandom(0, readNames.Length)];
+                string specName;
+                int rndSpecialization = GetRandomGenerator.GetRandom(1, 6);
+                int baseHP = GetRandomGenerator.GetRandom(25, 101);
+                int baseSP = GetRandomGenerator.GetRandom(25, 101);
+                int baseDEX = GetRandomGenerator.GetRandom(25, 101);
+                int level = GetRandomGenerator.GetRandom(1, 6);
+                switch (rndSpecialization)
                 {
-                    Console.WriteLine("C H O S E   C O R R E C T  N U M B E R");
+                    case 1:
+                    specName = "Archer";
+                        return new Archer(specName, name, level, baseHP, baseSP, baseDEX);
+                    case 2:
+                    specName = "Assassin";
+                        return new Assassin(specName, name, level, baseHP, baseSP, baseDEX);
+                    case 3:
+                    specName = "Brutal";
+                        return new Brutal(specName, name, level, baseHP, baseSP, baseDEX);
+                    case 4:
+                    case 5:
+                    specName = "Brutal";
+                        return new Swordsman(specName, name, level, baseHP, baseSP, baseDEX);
                 }
-                else if (chosenNumber == 1)
-                    numberOfGladiatorsToTournament = 2;
-                else if (chosenNumber == 2)
-                    numberOfGladiatorsToTournament = 4;
-
-                    for (int i = 0; i < numberOfGladiatorsToTournament; i++)
-                    {
-                    string name = readNames[GetRandomGenerator.GetRandom(0, readNames.Length)];
-                    int rndSpecialization = GetRandomGenerator.GetRandom(1, 6);
-                    int baseHP = GetRandomGenerator.GetRandom(25, 101);
-                    int baseSP = GetRandomGenerator.GetRandom(25, 101);
-                    int baseDEX = GetRandomGenerator.GetRandom(25, 101);
-                    int level = GetRandomGenerator.GetRandom(1, 6);
-                    switch (rndSpecialization)
-                    {
-                        case 1:
-                            TournamentGladiators.Add(new Archer(name, level, baseHP, baseSP, baseDEX));
-                            return new Archer(name, level, baseHP, baseSP, baseDEX);
-                        case 2:
-                            TournamentGladiators.Add(new Assassin(name, level, baseHP, baseSP, baseDEX));
-                            return new Assassin(name, level, baseHP, baseSP, baseDEX);
-                        case 3:
-                            TournamentGladiators.Add(new Brutal(name, level, baseHP, baseSP, baseDEX));
-                            return new Brutal(name, level, baseHP, baseSP, baseDEX);
-                        case 4:
-                        case 5:
-                            TournamentGladiators.Add(new Swordsman(name, level, baseHP, baseSP, baseDEX));
-                            return new Swordsman(name, level, baseHP, baseSP, baseDEX);
-                    }
-                    validCondition = true;
-                }
-            }
             return null;
-
         }
-
-        public static int Readline()
+        public static int ReadChosenNumber()
         {
             int number;
             string chosenValue = Console.ReadLine();
@@ -73,7 +54,7 @@ namespace Gladiator.Model
                 {
                     Console.WriteLine("C H O S E   C O R R E C T  N U M B E R");
                 }
-                else validCondition = true;             
+                else validCondition = true;
             }
             number = int.Parse(chosenValue);
             return number;
