@@ -36,16 +36,15 @@ namespace Gladiator.Model
                 {
                     damage = HitDamage(attacker);
                     defender.DecreaseHpBy(damage);
-                    ViewMod.DisplayMsg(attacker.SpeclizationName + " " + attacker.Name + " deals " + damage + " damage");
+                    DisplayDamageMessage(damage, attacker);
                 }
                 else
                 {
-                    ViewMod.DisplayMsg($"{attacker.SpeclizationName} {attacker.Name} missed");
+                    DisplayMissMessage(attacker);
                 }
                 if (defender.IsDead())
                 {
-
-                    ViewMod.DisplayMsg($"{defender.SpeclizationName} {defender.Name} is dead. {attacker.SpeclizationName}{attacker.Name} wins!");
+                    DisplayDeadMessage(attacker, defender);
                     return attacker;
                 }
                 else
@@ -56,6 +55,21 @@ namespace Gladiator.Model
             }
             winner = attacker;
             return winner;
+        }
+
+        private void DisplayDeadMessage(BaseGladiator attacker, BaseGladiator defender)
+        {
+            ViewMod.DisplayMsg($" {defender.SpeclizationName} {defender.Name} is dead.");
+        }
+
+        private void DisplayMissMessage(BaseGladiator attacker)
+        {
+            ViewMod.DisplayMsg($" {attacker.SpeclizationName} {attacker.Name} missed");
+        }
+
+        private void DisplayDamageMessage(int damage, BaseGladiator attacker)
+        {
+            ViewMod.DisplayMsg($" { attacker.SpeclizationName} {attacker.Name} deals {damage} damage");
         }
 
         private static void FirstAttacerMethod(BaseGladiator red, BaseGladiator blue, out BaseGladiator attacker, out BaseGladiator defender)

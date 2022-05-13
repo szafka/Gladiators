@@ -21,6 +21,7 @@ namespace Gladiator.View
 
         public void WaitForAnyInput()
         {
+            Console.WriteLine("\nPress any key to continue ...\n");
             Console.ReadKey();
         }
     }
