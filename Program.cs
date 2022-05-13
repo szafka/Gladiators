@@ -11,7 +11,7 @@ namespace Gladiator
     {
         public static void Main()
         {
-            MenuConsole.StartMenu()
+            MenuConsole.StartMenu();
         }
     }
 }

@@ -3,21 +3,24 @@ using Gladiator.Model.Gladiators;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Gladiator.Model
 {
     public class GladiatorFactory
     {
-
+        string[] readNames;
         public GladiatorFactory()
         {
+            readNames = File.ReadAllLines(@"C:\Dokumenty\gladiator-csharp-szafka\Names.txt");
+
         }
 
         public BaseGladiator GenerateRandomGladiator()
         {
-            string[] readNames = File.ReadAllLines(@"C:\Dokumenty\gladiator-csharp-szafka\Names.txt");
-
-                string name = readNames[GetRandomGenerator.GetRandom(0, readNames.Length)];
+                readNames = readNames.OrderBy(x => GetRandomGenerator.ShuffleArrayList()).ToArray();
+                string name = readNames[0];
+                readNames = readNames.Where(x => x != readNames[0]).ToArray();
                 string specName;
                 int rndSpecialization = GetRandomGenerator.GetRandom(1, 6);
                 int baseHP = GetRandomGenerator.GetRandom(25, 101);

@@ -37,6 +37,7 @@ namespace Gladiator.Model.Gladiators
             this.BaseHP = baseHP;
             this.BaseSP = baseSP;
             this.Name = name;
+            this.CurrentHP = baseHP;
         }
         public void LevelUp()
         {

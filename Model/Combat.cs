@@ -7,6 +7,10 @@ namespace Gladiator.Model
     public class Combat
     {
         private IView ViewMod;
+        public Combat()
+        {
+            ViewMod = new CombatView();
+        }
         public BaseGladiator Simulate(BaseGladiator red, BaseGladiator blue)
         {
             if (red == null && blue != null)
@@ -23,7 +27,7 @@ namespace Gladiator.Model
             }
             int damage;
             bool isStillAlive = true;
-            BaseGladiator attacker, defender;
+            BaseGladiator attacker, defender, winner;
             FirstAttacerMethod(red, blue, out attacker, out defender);
 
             while (isStillAlive)
@@ -32,7 +36,11 @@ namespace Gladiator.Model
                 {
                     damage = HitDamage(attacker);
                     defender.DecreaseHpBy(damage);
-                    ViewMod.DisplayMsg(attacker.SpeclizationName + " " + attacker.Name + "deals " + damage + "damage");
+                    ViewMod.DisplayMsg(attacker.SpeclizationName + " " + attacker.Name + " deals " + damage + " damage");
+                }
+                else
+                {
+                    ViewMod.DisplayMsg($"{attacker.SpeclizationName} {attacker.Name} missed");
                 }
                 if (defender.IsDead())
                 {
@@ -46,7 +54,8 @@ namespace Gladiator.Model
 
                 } 
             }
-            return null;
+            winner = attacker;
+            return winner;
         }
 
         private static void FirstAttacerMethod(BaseGladiator red, BaseGladiator blue, out BaseGladiator attacker, out BaseGladiator defender)
